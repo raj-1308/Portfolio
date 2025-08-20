@@ -30,9 +30,9 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Connect with me</h4>
           <div className="social-icons">
-            <a href="https://github.com/rajpandey" target="_blank" rel="noreferrer"><FaGithub /></a>
-            <a href="https://linkedin.com/in/rajpandey" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-            <a href="https://twitter.com/rajpandey" target="_blank" rel="noreferrer"><FaTwitter /></a>
+            <a href="https://github.com/raj-1308" target="_blank" rel="noreferrer"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/raj-pandey-894701298/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+            <a href="https://x.com/Rajpandey1308" target="_blank" rel="noreferrer"><FaTwitter /></a>
             <a href="mailto:rajpandey6365@gmail.com"><FaEnvelope /></a>
           </div>
         </div>
