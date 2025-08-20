@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./About.css"; // capital A
+import "./about.css"; // capital A
 
 import { FaReact, FaNodeJs, FaPython, FaDatabase, FaLock } from "react-icons/fa";
 import { SiMongodb, SiJavascript } from "react-icons/si";
