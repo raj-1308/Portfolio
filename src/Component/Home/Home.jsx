@@ -58,7 +58,7 @@ export default function Home() {
               Contact Me
             </motion.a>
             <motion.a
-              href="cv.html"
+              href="/RajPandey_CV.pdf"
               className="btn secondary-btn"
               whileHover={{ scale: 1.1, boxShadow: "0 0 15px #00c8ff" }}
               whileTap={{ scale: 0.95 }}
@@ -69,13 +69,13 @@ export default function Home() {
 
           {/* Social Links */}
           <div className="social-links">
-            <a href="https://github.com/raj-1308" target="_blank" rel="noreferrer">
+            <a href="https://github.com/rajpandey" target="_blank" rel="noreferrer">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/raj-pandey-894701298/" target="_blank" rel="noreferrer">
+            <a href="https://linkedin.com/in/rajpandey" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://x.com/Rajpandey1308" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/rajpandey" target="_blank" rel="noreferrer">
               <FaTwitter />
             </a>
           </div>

@@ -4,7 +4,13 @@ import "./projects.css";
 
 const Projects = () => {
   const projectList = [
-    
+    {
+      title: "Xiper - Social Media Platform",
+      description:
+        "A unique social media app similar to Instagram/Twitter, focusing on real-time communication and community building.",
+      tech: ["React", "Node.js", "MongoDB", "Express.js"],
+      link: "#",
+    },
     {
       title: "Xipper - E-commerce Clothing Website",
       description:
@@ -45,7 +51,7 @@ const Projects = () => {
             key={index}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
             whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00c8ff" }}
           >
             <h3 className="project-title">{project.title}</h3>

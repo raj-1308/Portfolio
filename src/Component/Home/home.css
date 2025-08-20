@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 50px 20px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -97,6 +97,7 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap; /* Responsive */
 }
 
 .btn {
@@ -118,7 +119,6 @@
   color: var(--primary-color);
 }
 
-/* Hover Effects */
 .btn:hover {
   box-shadow: 0 0 15px var(--primary-color);
 }
@@ -133,6 +133,7 @@
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .social-links a {
@@ -152,22 +153,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .profile-img {
   width: 100%;
   max-width: 400px;
-  
   border-radius: 20px;
   border: 2px solid rgba(0, 200, 255, 0.5);
   box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
   transition: all 0.4s ease;
+  margin-top: 50px;
 }
 
-/* Responsive */
+/* Hover Animation */
+.profile-img:hover {
+  transform: scale(1.15) rotate(2deg);
+  box-shadow: 0 0 60px rgba(0, 200, 255, 0.9);
+}
+
+/* Responsive Media Queries */
 @media (max-width: 900px) {
   .home-container {
     flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
   }
 
@@ -177,63 +186,23 @@
 
   .btn-group {
     justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 20px;
   }
 
-  .home-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .home-text p, .typewriter {
-    font-size: 0.95rem;
-  }
-
-  .home-img .profile-img {
-    width: 200px;
-    height: 200px;
-  }
-}
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .home-container {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .home-text h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .home-text p, .typewriter {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  .home-img .profile-img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  .social-links {
+    justify-content: center;
   }
 }
 
-/* Buttons for mobile touch */
-@media (max-width: 480px) {
-  .btn, .btn-submit {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+@media (max-width: 500px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .typewriter {
+    font-size: 1.2rem;
+  }
+
+  .profile-img {
+    max-width: 200px;
   }
 }
