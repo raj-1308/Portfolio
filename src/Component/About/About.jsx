@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./About.css";
+import "./About.css"; // must match exact filename
 import { FaReact, FaNodeJs, FaPython, FaDatabase, FaLock } from "react-icons/fa";
 import { SiMongodb, SiJavascript } from "react-icons/si";
 
