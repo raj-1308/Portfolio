@@ -1,0 +1,239 @@
+/* Dark Theme Variables */
+:root {
+  --primary-color: #00c8ff;
+  --secondary-color: #ffffff;
+  --background-color: #0f0f0f;
+  --text-color: #e0e0e0;
+  --highlight-color: #00c8ff;
+  --overlay-color: rgba(15, 15, 15, 0.85);
+}
+
+/* Home Section */
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Neon Particle Background */
+.neon-bg {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 200, 255, 0.05), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 0, 255, 0.05), transparent 50%);
+  animation: neon-move 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes neon-move {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-50px, 50px) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Container */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+/* Text Section */
+.home-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #00c8ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 5s ease infinite;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.typewriter {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #aaaaaa;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+.secondary-btn {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Hover Effects */
+.btn:hover {
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.secondary-btn:hover {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-links a {
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+/* Profile Image */
+.home-img {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 400px;
+  
+  border-radius: 20px;
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home-text, .home-img {
+    max-width: 100%;
+  }
+
+  .btn-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-text p, .typewriter {
+    font-size: 0.95rem;
+  }
+
+  .home-img .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .home-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .home-text p, .typewriter {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .home-img .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* Buttons for mobile touch */
+@media (max-width: 480px) {
+  .btn, .btn-submit {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

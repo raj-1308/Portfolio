@@ -1,0 +1,190 @@
+:root {
+  --primary-color: #00c8ff;
+  --secondary-color: #ffffff;
+  --background-color: #0f0f0f;
+  --text-color: #e0e0e0;
+  --highlight-color: #00c8ff;
+  --overlay-color: rgba(15, 15, 15, 0.85);
+}
+
+/* About Section */
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Neon Background Animation */
+.about-bg {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 25% 25%, rgba(0,200,255,0.05), transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(255,0,255,0.05), transparent 50%);
+  animation: neon-move 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes neon-move {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-50px,50px) rotate(180deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Container */
+.about-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+/* Text Section */
+.about-text {
+  flex: 1;
+  max-width: 700px;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff; /* fallback color */
+  background: linear-gradient(90deg, #00c8ff, #ff00ff);
+  -webkit-background-clip: text; /* clips gradient to text (Chrome/Safari) */
+  -webkit-text-fill-color: transparent; /* makes text transparent so gradient shows */
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: var(--highlight-color);
+  font-weight: 600;
+}
+
+/* Skills */
+.skills-section {
+  margin-bottom: 2rem;
+}
+
+.skills-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-card {
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 120px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+.secondary-btn {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .about-text h2, .about-intro {
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
