@@ -19,11 +19,12 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("/api/contact", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
-});
+      const response = await fetch("https://your-vercel-app.vercel.app/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
 
 
       const data = await response.json();
@@ -61,7 +62,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          I’d love to hear from you! Whether it’s a project, collaboration, job opportunity, 
+          I’d love to hear from you! Whether it’s a project, collaboration, job opportunity,
           or just a friendly chat.
         </motion.p>
 
@@ -135,9 +136,8 @@ export default function Contact() {
 
             {status && (
               <p
-                className={`status-message ${
-                  status.includes("✅") ? "success" : status.includes("❌") ? "error" : "info"
-                }`}
+                className={`status-message ${status.includes("✅") ? "success" : status.includes("❌") ? "error" : "info"
+                  }`}
               >
                 {status}
               </p>
