@@ -1,25 +1,11 @@
 {
   "version": 3,
-  "name": "portfolio",
   "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
-    },
-    {
-      "src": "backend/server.cjs",
-      "use": "@vercel/node"
-    }
+    { "src": "client/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } },
+    { "src": "api/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/server.cjs"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/client/$1"
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/client/$1" }
   ]
 }
