@@ -27,16 +27,15 @@ export default function Contact() {
     `;
 
     try {
-      const response = await fetch("/api/contact", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name: formData.name,
-    email: formData.email,
-    message: `📩 New Contact Message\n👤 Name: ${formData.name}\n📧 Email: ${formData.email}\n📝 Message: ${formData.message}`,
-  }),
-});
-
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formattedMessage, // send formatted message
+        }),
+      });
 
       const data = await response.json();
 
