@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
-// ✅ API Route
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -21,8 +20,8 @@ app.post("/api/contact", async (req, res) => {
 
   try {
     const result = await client.messages.create({
-  from: "whatsapp:+14155238886",   // Twilio sandbox number
-  to: "whatsapp:+917777021159",    // your verified number
+  from: "whatsapp:+14155238886",   
+  to: "whatsapp:+917777021159",   
   body: `New message from ${name} (${email}):\n${message}`,
 });
 
@@ -34,11 +33,9 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// ✅ Health Check
 app.get("/", (req, res) => {
   res.send("Backend is running! ✅");
 });
 
-// ✅ Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
